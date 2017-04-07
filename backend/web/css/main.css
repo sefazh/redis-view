@@ -1,0 +1,512 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Microsoft YaHei";
+}
+
+html { height: 100%; }
+
+body {
+    position: relative;
+    min-height: 100%;
+    background-color: #f1f4f7;
+}
+
+
+/*************************
+ * 移动适应
+ *************************/
+@media screen and (max-width: 768px) {
+    .page-head .tool-bar .section-2 {
+        display: none;
+        position: absolute;
+        right: 0;
+        top: 50px;
+        color: #337ab7;
+        background-color: #fdfdfd;
+        padding: 0 1rem;
+        box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+    }
+
+    .page-head .tool-bar .section-2>li>a {
+        color: #337ab7 !important;
+    }
+
+    .page-head .tool-bar .section-2>li {
+        clear: left;
+    }
+
+    .page-head .header .tool-bar .section-2>li:last-of-type {
+        border-right: none;
+    }
+
+    .page-head .header .tool-bar .section-2-btn a {
+        display: block;
+    }
+
+
+    .right-side .bread { padding: 0 !important;}
+
+    .right-side .main .section {
+        margin: 2rem 0;
+        padding: 2rem;
+    }
+}
+
+
+/*head section*/
+.page-head {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    height: 51px;
+    border-bottom: #fff solid 1px;
+    box-shadow: 0 1px 10px rgba(0, 0, 0, .15)
+}
+
+.left-side {
+    position: fixed;
+    z-index: 10;
+    top: 51px;
+    height: 100%;
+    width: 240px;
+    box-shadow: 1px 0 10px rgba(0, 0, 0, .05)
+}
+
+.right-side {
+    position: relative;
+    top: 51px;
+    margin-left: 240px;
+    height: 100%;
+}
+
+.page-foot {
+    position: fixed;
+    width: 100%;
+    height: 50px;
+    bottom: 0;
+}
+
+.header {
+    height: 100%;
+    line-height: 50px;
+    font-size: 18px;
+    color: #ffffff;
+    background-color: #337ab7;
+
+}
+
+.header .brand {
+    width: 240px;
+    background-color: #337ab7;
+}
+
+.header .logo {
+    position: absolute;
+    left: 5px;
+    top: 5px;
+    width: 40px;
+    height: 40px;
+    background-color: #fff;
+    border-radius: 5px;
+}
+
+.header div.logo {
+    color: gray;
+    font-size: 14px;
+    text-align: center;
+    line-height: 40px;
+}
+
+.header .brand p, .header .brand a{
+    display: block;
+    color: #ffffff;
+    height: 100%;
+    margin-left: 50px;
+    line-height: 50px;
+    text-indent: 10px;
+    text-decoration: none;
+    cursor: default;
+    margin-bottom: 0;
+
+    position: relative;
+    z-index: 8;
+}
+
+.header .tool-bar {
+    width: 100%;
+    padding-left: 240px;
+    position: absolute;
+    top: 0;
+    /*background-color: #337ab7;*/
+}
+
+.header .tool-bar .section-1 {
+    height: 100%;
+    line-height: 50px;
+    float: left;
+}
+
+.header .tool-bar .section-1 .toggle-btn {
+    display: block;
+    color: #fff;
+    width: 50px;
+    height: 100%;
+    text-align: center;
+    font-size: 20px;
+}
+
+.header .tool-bar .section-2 {
+    list-style-type: none;
+    margin: 0;
+    padding-right: 15px;
+    float: right;
+}
+
+.header .tool-bar .section-2-btn a {
+    display: none;
+    color: #fff;
+    width: 50px;
+    height: 100%;
+    text-align: center;
+    font-size: 20px;
+    float: right;
+}
+
+.header .tool-bar .section-2>li:last-of-type {border-right: #fff solid 1px;}
+
+.header .tool-bar .section-2>li {
+    float: left;
+    border-left: #fff solid 1px;
+}
+.header .tool-bar .section-2>li>a:hover {
+    background-color: #fff;
+    color: #337ab7;
+}
+
+.header .tool-bar .section-2>li>a {
+    display: block;
+    height: 100%;
+    line-height: 50px;
+    padding: 0 20px;
+    font-size: 14px;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+/*menu*/
+.left-side .menu {
+    height: 100%;
+    background-color: #fff;
+    /*overflow: scroll;*/
+}
+
+.left-side .menu>ul {margin-bottom: 100px;}
+
+.left-side .menu ul { overflow: hidden;}
+
+/*.left-side .menu ul { display: none}*/
+.left-side .menu a { text-decoration: none;  color: #337ab7; }
+
+.left-side .menu>ul>li {
+    width: 100%;
+    min-height: 50px;
+    display: block;
+    float: left;
+}
+.menu>ul>li>a>i.fa { display: inline-block; width: 16px; text-align: center; margin-right: 5px;}
+
+/*上箭头*/
+.left-side .menu .sub-list>a { position: relative}
+
+.left-side .menu .sub-list>a:after {
+    content: '';
+    width:0;
+    height:0;
+    border-top: 0;
+    border-left:5px solid transparent;
+    border-right:5px solid transparent;
+    border-bottom:8px solid #337ab7;
+    right: 25px;
+    top: 22px;
+    position: absolute;
+}
+/*激活状态*/
+.left-side .menu li.active a { color: #fff}
+
+.left-side .menu ul li.active { background-color: #337ab7; }
+/*下箭头*/
+.left-side .menu .sub-list.list-active {
+    background-color: #e9ecf2;
+}
+.left-side .menu .sub-list.list-active>a:after {
+    border-left:5px solid transparent;
+    border-right:5px solid transparent;
+    border-top:8px solid #337ab7;
+    border-bottom: 0;
+}
+
+.left-side .menu .sub-list .subMenu {
+    transition: height 1s ease;
+}
+
+
+/*子菜单*/
+.subMenu { height: 0;}
+
+.sub-list.list-active .subMenu { height: auto;}
+
+.left-side .menu .sub-list .subMenu {  background-color: #f9f9f9; position: relative;  }
+
+.left-side .menu .sub-list .subMenu li {  padding-left: 28px; }
+
+.left-side .menu .sub-list .subMenu:before {
+    content: "";
+    display: block;
+    position: absolute;
+    z-index: 1;
+    left: 24px;
+    top: 0;
+    bottom: 0;
+    border: 1px dotted #a8abb1;
+    border-width: 0 0 0 1px;
+}
+
+.left-side .menu .sub-list .subMenu li:last-child { border-bottom: none}
+
+.left-side .menu .sub-list .subMenu a { position: relative}
+
+.left-side .menu .sub-list .subMenu a:before {
+    content: "";
+    display: block;
+    position: absolute;
+    left: -3px;
+    top: 25px;
+    width: 16px;
+    height: 0;
+    border: 1px dotted #a8abb1;
+    border-width: 1px 0 0 0;
+}
+
+.left-side .menu li.active {
+    position: relative;
+}
+
+.left-side .menu li.active:after {
+    content: "";
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 8px;
+    width: 0;
+    height: 0;
+    border-left:0;
+    border-right:14px solid #fff;
+    border-top:16px solid transparent;
+    border-bottom:16px solid transparent;
+}
+
+.left-side .menu li:hover {
+    background-color: #e9ecf2;
+}
+
+.left-side .menu ul>li>a {
+    display: block;
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    padding-left: 18px;
+    font-size: 14px;
+}
+
+.left-side .menu span.glyphicon {
+    margin-right: 10px;
+}
+
+
+/* webkit滚动条 */
+::-webkit-scrollbar { width: 0;}
+
+
+/*menu collapse*/
+.menu-collapse .page-head .brand { width: 50px;}
+
+.menu-collapse .page-head .brand a { display: none;}
+
+.menu-collapse .page-head .tool-bar { padding-left: 50px;}
+
+.menu-collapse .left-side { width: 50px;}
+
+.menu-collapse .right-side { margin-left: 50px;}
+
+.menu-collapse .menu .sub-list .subMenu {
+    width: 190px;
+    position: absolute;
+    left: 50px;
+    height: inherit;
+    display: none;
+    border-right: #337ab7 solid 2px;
+    /*border-bottom: #337ab7 solid 1px;*/
+    box-shadow: 2px 2px 2px rgba(0,0,0,0.05);
+}
+
+.menu-collapse .menu .sub-list:hover .subMenu {
+    display: block;
+}
+
+.menu-collapse .menu>ul>li>a>span { display: none; }
+
+.menu-collapse .menu .sub-list>a:after { display: none; }
+
+.menu-collapse .left-side .menu>ul>li.active, .menu-collapse .left-side .menu .sub-list>a { position: inherit}
+
+.menu-collapse .menu li.active:after { display: none;}
+
+.menu-collapse .menu>ul>li:hover>a>span {
+    display: block;
+    position: absolute;
+    width: 190px;
+    left: 50px;
+    margin-top: -50px;
+    background-color: #e9ecf2;
+    color: #337ab7;
+    padding-left: 20px;
+    border-right: #337ab7 solid 2px;
+}
+
+.menu-collapse .menu .sub-list.list-active { background-color: #337ab7; }
+
+.menu-collapse .menu .sub-list.list-active>a { color: #fff; }
+
+
+/* 登录页面 */
+@keyframes fade-in {
+    0% { opacity: 0; top: 10%; }
+    100% { opacity: 1; top: 15%; }
+}
+
+@-webkit-keyframes fade-in {
+    0% { opacity: 0; top: 10%; }
+    100% { opacity: 1; top: 15%; }
+}
+
+@media screen and (max-height:700px) {
+    .page-foot { display: none}
+}
+
+@media (max-width:480px) {
+    .signin {
+        width: 300px !important;
+        margin-left: -150px !important;
+    }
+}
+
+.login-page {
+    background: url(../images/login-bg.jpg);
+    background-size: cover;
+}
+
+.signin {
+    animation: fade-in;
+    animation-duration: 1s;
+    -webkit-animation:fade-in 1s;
+    -webkit-animation-duration: 1s;
+}
+
+.signin {
+    position: absolute;
+    left: 50%;
+    top: 15%;
+    margin-left: -170px;
+
+    width: 340px;
+    padding: 50px 35px 75px;
+    border: #337ab7 solid 2px;
+    border-radius: 10px;
+    background-color: rgba(255,255,255,.8);
+    box-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+.signin h3 { text-align: center}
+
+.signin form input { height: 50px; margin: 20px 0 0; }
+
+.signin form button { margin-top: 25px;}
+
+.page-foot .copyright { font-weight: bold; color: #fff; font-size: 14px;}
+.page-foot p { text-align: center; font-size: 12px; color: #ccc}
+
+
+/*validate error*/
+label.error { color: red; }
+
+
+/*pagination*/
+.pagination>li>a.pagination-input { height: 34px; padding: 2px;}
+
+.pagination>li>a.pagination-input input { width: 55px;height: 28px;}
+
+
+/* main 主题内容部分*/
+.main .section {
+    margin: 25px 30px 0;
+    padding: 35px;
+    border-radius: 3px;
+    background-color: #fff;
+    box-shadow: 1px 1px 1px rgba(0,0,0,0.05);
+}
+
+.main .section:last-of-type {
+    margin-bottom: 75px;
+}
+
+.main .section .section-title {
+    padding-bottom: 30px;
+    color: #424F63;
+    border-bottom: #ddd solid 1px;
+}
+
+
+/*breadcrumb*/
+.right-side .bread {
+    overflow: hidden;
+    margin: 10px 0 -15px;
+    padding: 0 30px;
+}
+.right-side .bread .breadcrumb {
+    border-radius: 3px;
+    background-color: #fff;
+    margin-bottom: 0;
+    box-shadow: 1px 1px 1px rgba(0,0,0,0.05);
+}
+
+
+/*iconic-input*/
+.iconic-input {
+    position: relative;
+}
+
+.iconic-input.iconic-right i {
+    float: right;
+    right: 5px;
+}
+
+.iconic-input i {
+    color: #CCCCCC;
+    display: block;
+    font-size: 18px;
+    height: 18px;
+    margin: 8px 5px 8px 10px;
+    position: absolute;
+    text-align: center;
+}
+
+.iconic-input input {
+    padding-left: 30px !important;
+}
+
+.iconic-input.iconic-right input {
+    padding-left: 10px !important;
+    padding-right: 30px !important;
+}

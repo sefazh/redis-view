@@ -1,0 +1,21 @@
+table.table { background-color: #fff;}
+
+.input-group-addon { background-color: #fff;}
+
+
+.btn-success-o {
+    color: #4cae4c;
+    background-color: #fff;
+}
+.btn-info-o {
+    color: #46b8da;
+    background-color: #fff;
+}
+.btn-warning-o {
+    color: #eea236;
+    background-color: #fff;
+}
+.btn-danger-o {
+    color: #d43f3a;
+    background-color: #fff;
+}
